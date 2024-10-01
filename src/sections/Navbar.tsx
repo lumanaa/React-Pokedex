@@ -1,30 +1,35 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import pokeballicon from "../assets/pokeball-icon.png";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { useEffect, useMemo } from "react";
 
 const Navbar = () => {
-  const navigationRoutes = [
-    {
-      name: "Search",
-      route: "/search",
-    },
-    {
-      name: "Compare",
-      route: "/compare",
-    },
-    {
-      name: "Pokemon",
-      route: "/pokemon",
-    },
-    {
-      name: "My List",
-      route: "/list",
-    },
-    {
-      name: "About",
-      route: "/about",
-    },
-  ];
+  const location = useLocation();
+
+  const navigationRoutes = useMemo(
+    () => [
+      { name: "Search", route: "/search" },
+      { name: "Compare", route: "/compare" },
+      { name: "Pokemon", route: "/pokemon" },
+      { name: "My List", route: "/list" },
+      { name: "About", route: "/about" },
+    ],
+    []
+  );
+
+  useEffect(() => {
+    const index = navigationRoutes.findIndex(({ route }) =>
+      location.pathname.includes(route)
+    );
+    ul(index);
+  }, [location.pathname, navigationRoutes]);
+
+  const ul = (index: number) => {
+    const underlines = document.querySelectorAll<HTMLElement>(".underline");
+    for (let i = 0; i < underlines.length; i++) {
+      underlines[i].style.transform = `translate3d(${index * 100}%, 0, 0)`;
+    }
+  };
 
   return (
     <nav>
