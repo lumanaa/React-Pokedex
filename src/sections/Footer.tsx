@@ -1,4 +1,4 @@
-import React from "react";
+
 import { MdOutlinePowerSettingsNew } from "react-icons/md";
 
 const Footer = () => {

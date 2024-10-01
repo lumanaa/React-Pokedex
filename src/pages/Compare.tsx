@@ -1,9 +1,9 @@
-import React from 'react'
+import Wrapper from "../sections/Wrapper";
 
 const Compare = () => {
-  return (
-    <div>Compare</div>
-  )
-}
+  return <div>Compare</div>;
+};
 
-export default Compare
+const WrappedCompare = Wrapper(Compare);
+
+export default WrappedCompare;

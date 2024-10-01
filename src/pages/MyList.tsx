@@ -1,4 +1,5 @@
-import React from 'react'
+
+import Wrapper from '../sections/Wrapper';
 
 const MyList = () => {
   return (
@@ -6,4 +7,6 @@ const MyList = () => {
   )
 }
 
-export default MyList
+const WrappedMyList = Wrapper(MyList);
+
+export default WrappedMyList;

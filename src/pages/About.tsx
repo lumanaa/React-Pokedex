@@ -1,9 +1,10 @@
-import React from 'react'
+import Wrapper from "../sections/Wrapper";
 
 const About = () => {
-  return (
-    <div>About</div>
-  )
-}
+  return <div>About</div>;
+};
 
-export default About
+// Give the wrapped component a name
+const WrappedAbout = Wrapper(About);
+
+export default WrappedAbout;
