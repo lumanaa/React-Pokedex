@@ -1,9 +1,18 @@
-import React from 'react'
+import pokeballicon from "../assets/pokeball-icon.png";
+import { GiHamburgerMenu } from "react-icons/gi";
 
 const Navbar = () => {
   return (
-    <div>Navbar</div>
-  )
-}
+    <nav>
+      <div className='block'>
+        <img src={pokeballicon} alt='pokeball icon' />
+      </div>
+      <div className='data'></div>
+      <div className='block'>
+        <GiHamburgerMenu />
+      </div>
+    </nav>
+  );
+};
 
-export default Navbar
+export default Navbar;
